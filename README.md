@@ -92,9 +92,13 @@ Before starting the exercises, make sure you have:
 
 ## Exercises
 
-| # | Title | Skills Practised |
-|---|-------|-----------------|
-| 1 | [Getting Started - Your First Copilot](exercises\exercise 1 - Onboarding\exercise-1-getting-started.md)| Creating a copilot, adding tools, skills, testing |
+**Labs**:
+
+- Lab 1: [Getting Started - Knowledge sources and custom instructions](Labs/01-first-agent/README.md)
+- Lab 2: [Outlook Triggered Workflow Agent](Labs/02-email-triggered-agent/README.md)
+- Lab 3: [Multi-Agent Orchestration: Expenses and Holidays](Labs/03-multi-agent-orchestration/README.md)
+- Lab 4: [GitHub Developer Agent](Labs/04-github-developer-agent/README.md)
+
 ---
 
 ## Additional Resources

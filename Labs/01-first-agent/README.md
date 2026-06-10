@@ -4,16 +4,18 @@
 
 ---
 
-## Learning Objectives
+## Scenario
 
-By the end of this exercise you will be able to:
+You are joining **Contoso** as a new employee, and HR wants to give every new hire a self-service onboarding assistant instead of forcing them to dig through SharePoint, email IT, or chase their manager for basic information.
 
-- Navigate the Copilot Studio interface.
-- Create a new copilot and configure basic settings.
-- Add onboarding documents as knowledge sources.
-- Add basic Office 365 Users tools.
-- Add a simple skill that improves how the agent explains what it can do.
-- Test a copilot using the built-in preview canvas.
+You will build an **Onboarding Agent** that:
+
+1. Answers common new-hire questions (trainings, tooling, org structure, role) using a small set of approved onboarding documents as the single source of truth.
+2. Looks up live people data (your manager, your team) via the **Office 365 Users** tools, so answers reflect the real org chart instead of static text.
+3. Greets the user with a helpful introduction and suggested starter questions via a custom **greeting skill**, so first-time users immediately know what they can ask.
+4. Stays grounded: if the answer is not in the documents or available via the connected tools, the agent should not invent one.
+
+By the end of the exercise you will have a working, grounded onboarding agent that you can test live in the Copilot Studio preview canvas.
 
 ---
 
@@ -27,24 +29,28 @@ By the end of this exercise you will be able to:
 ---
 
 ## Step 2 - Create a New Copilot
-1. On the Copilot Studio home page, click **Agents** and then **Create New**.
+1. On the Copilot Studio home page, click **Agent**.
 2. Fill in the details:
    - **Name:** `On-boarding-Agent`
    - **Instructions:** 
-
-       You are an onboarding assistant for Contoso.
-       Use the provided onboarding documents to answer employee questions clearly and concisely.
-       Always:
-          Provide structured answers
-          Extract information only from the documents
-          Be helpful and actionable​
-
+   ```text
+      You are an onboarding assistant for Contoso.
+      Use the provided onboarding documents to answer employee questions clearly and concisely.
+      Always:
+        - Provide structured answers
+        - Extract information only from the documents
+        - Be helpful and actionable​
+   ```
+   - **Model**: you can choose whichever model you prefer, for the demo I used Claude Sonnet 4.6.
    - **Knowledge**: add the 3 documents from: exercises/exercise 1 - Onboarding/knowledge base
+
+
 
 ![alt text](..\images\agent-overview.png)
    - Leave all other settings as default.
 3. Click **Publish**.  
-   Copilot Studio will provision the copilot - this usually takes less than a minute.
+   Copilot Studio will provision the copilot - this usually takes less than a minute. 
+   Note: The agent will be published to your account, but **won't** be yet available for others.
 ---
 
 ## Step 3 - Test it out
@@ -56,6 +62,7 @@ Example Questions:
    - What is my official role?
    - Who is my manager? and my team-mates?
    - When do I have my next holiday?
+   - When is the first match of the WorldCup 2026?
 
 Steps:
 1. Go to **Preview** tab at the top in order to test the agent.
@@ -71,15 +78,18 @@ Now, we will include some tools in order to be able to answer some of the previo
 ![alt text](../images/tools.png)
 3. Now change the **Instructions** to be more specific:
 
-    You are an onboarding assistant for Contoso.
-    Use the provided onboarding documents to answer employee questions clearly and concisely.
-    Use the provided Office 365 Users tools to get team-related information.
-    Always:
-       Provide structured answers
-       Extract information only from the documents
-       Be helpful and actionable​​
-
-4. Now, go back to the **Preview** tab and re-test the 2 team-related questions and observe how these new tools are being retrieved.
+   ```text
+   You are an onboarding assistant for Contoso.
+   Use the provided onboarding documents to answer employee questions clearly and concisely.
+   Use the provided Office 365 Users tools to get team-related information.
+   Always:
+   - Provide structured answers
+   - Extract information only from the documents
+   - Be helpful and actionable​​
+   ```
+   
+4. Publish the changes.
+5. Now, go back to the **Preview** tab and re-test the 2 team-related questions and observe how these new tools are being retrieved.
    - What is my official role?
    - Who is my manager? and my team-mates?
 
@@ -90,7 +100,7 @@ Now, we will include some tools in order to be able to answer some of the previo
 In this step, we want to provide a better experience to the user when they ask what the agent is capable of doing, for this, we create a skill.
 
 1. Before we do any change, re-run the question and observe the outcome:
-   - Hello, What do you do?
+   - Hello, what do you do?
 2. Now, go to Skills on the right side, and click on the '+' symbol. Drag the exercises/exercise 1 - Onboarding/greeting-skill.md to the skill window.
 3. Check in the code what the greeting-skill.md contains:
    - **Name:** `greeting-skill`
@@ -98,7 +108,18 @@ In this step, we want to provide a better experience to the user when they ask w
    - **Instructions:**: the skill asks the agent to introduce itself as Contoso's onboarding assistant and provide example questions the user can ask
 4. Ask again:
    - Hello, what do you do?
-5. Observe the results. The answer should now better explain the agent's purpose and suggest useful onboarding questions.
+5. Observe the results. The answer should now suggest useful onboarding questions.
 ![alt text](../images/greeting-improved.png)
 6. Note: this skill improves the response to that user question, but it does **not** replace the default preview banner shown when a new chat starts.
 ---
+
+## What have we learned
+
+In this exercise you have:
+
+- Navigated the Copilot Studio interface.
+- Created a new copilot and configured its basic settings.
+- Added onboarding documents as knowledge sources to ground the agent.
+- Added basic Office 365 Users tools to retrieve live people data.
+- Added a simple skill that improves how the agent explains what it can do.
+- Tested the copilot using the built-in preview canvas.
