@@ -1,4 +1,4 @@
-# Exercise 1 - Getting Started: Your First Copilot
+# Exercise 1 - Getting Started: Knowledge sources and custom instructions
 
 **Goal:** Create a copilot from scratch, ground it in onboarding documents, add basic Microsoft 365 tools, improve its capability-introduction response with a skill, and test it in the built-in preview canvas.
 
@@ -34,19 +34,19 @@ By the end of the exercise you will have a working, grounded onboarding agent th
    - **Name:** `On-boarding-Agent`
    - **Instructions:** 
    ```text
-      You are an onboarding assistant for Contoso.
-      Use the provided onboarding documents to answer employee questions clearly and concisely.
-      Always:
-        - Provide structured answers
-        - Extract information only from the documents
-        - Be helpful and actionable​
+   You are an onboarding assistant for Contoso.
+   Use the provided onboarding documents to answer employee questions clearly and concisely.
+   Always:
+   - Provide structured answers
+   - Extract information only from the documents
+   - Be helpful and actionable
    ```
    - **Model**: you can choose whichever model you prefer, for the demo I used Claude Sonnet 4.6.
-   - **Knowledge**: add the 3 documents from: exercises/exercise 1 - Onboarding/knowledge base
+   - **Knowledge**: add the 3 documents from: `Labs/01-first-agent/knowledge base`
 
 
 
-![alt text](..\images\agent-overview.png)
+![alt text](../images/agent-overview.png)
    - Leave all other settings as default.
 3. Click **Publish**.  
    Copilot Studio will provision the copilot - this usually takes less than a minute. 
@@ -85,7 +85,7 @@ Now, we will include some tools in order to be able to answer some of the previo
    Always:
    - Provide structured answers
    - Extract information only from the documents
-   - Be helpful and actionable​​
+   - Be helpful and actionable
    ```
    
 4. Publish the changes.
@@ -101,7 +101,7 @@ In this step, we want to provide a better experience to the user when they ask w
 
 1. Before we do any change, re-run the question and observe the outcome:
    - Hello, what do you do?
-2. Now, go to Skills on the right side, and click on the '+' symbol. Drag the exercises/exercise 1 - Onboarding/greeting-skill.md to the skill window.
+2. Now, go to Skills on the right side, and click on the '+' symbol. Drag `Labs/01-first-agent/skills/greeting-skill.md` to the skill window.
 3. Check in the code what the greeting-skill.md contains:
    - **Name:** `greeting-skill`
    - **Description:**: this skill is used to provide the user with information on what the agent does, including sample questions

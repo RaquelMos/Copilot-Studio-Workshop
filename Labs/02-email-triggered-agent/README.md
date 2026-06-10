@@ -58,7 +58,7 @@ By the end of the exercise you will have a working email-triage agent that turns
       - If none of the questions are in-scope or answerable from the knowledge sources, do not draft an email response.
       ```
    - **Model**: you can choose whichever model you prefer, for the demo I used Claude Sonnet 4.6.
-   - **Knowledge**: add the 1 document from: exercises/exercise 2 - Outlook-triggered/knowledge base
+   - **Knowledge**: add the 1 document from: `Labs/02-email-triggered-agent/knowledge base`
 ---
 
 ## Step 3 - Add the Email Action Tool
