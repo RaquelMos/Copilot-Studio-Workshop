@@ -84,17 +84,18 @@ User (Teams / Web / Mobile)
 Before starting the exercises, make sure you have:
 
 - [ ] A **Microsoft 365** account with access to [make.powerapps.com](https://make.powerapps.com) or [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com).
-- [ ] A **Power Platform environment** where you have the *Environment Maker* role.
 - [ ] A modern web browser (Edge or Chrome recommended).
-
 
 ---
 
 ## Exercises
 
-| # | Title | Skills Practised |
-|---|-------|-----------------|
-| 1 | [Getting Started - Your First Copilot](exercises\exercise 1 - Onboarding\exercise-1-getting-started.md)| Creating a copilot, adding tools, skills, testing |
+**Labs**:
+
+- Lab 1: [Getting Started - Knowledge sources and custom instructions](Labs/01-first-agent/README.md)
+- Lab 2: [Outlook Triggered Workflow Agent](Labs/02-email-triggered-agent/README.md)
+- Lab 3: [GitHub Developer Agent](Labs/03-github-developer-agent/README.md)
+
 ---
 
 ## Additional Resources
